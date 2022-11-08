@@ -22,9 +22,15 @@ $orange: #dd7c00;
 $green: #3b975f;
 $blue: #4261ab;
 
-.page-heading {
-	color: $red;
+img {
+	background-color: #dd7c00;
+}
 
+img:hover {
+	background-color: #ab424a;
+}
+
+.page-heading {
 	// Sass lets you write your media queries inline if you want.
 	// This is why I'm always forgetting I have to put the class inside
 	// the media query in regular CSS. I never have to in Sass!
