@@ -22,13 +22,37 @@ $orange: #dd7c00;
 $green: #3b975f;
 $blue: #4261ab;
 
+h1 {
+	color: white;
+}
+
 img {
 	background-color: #dd7c00;
+	border-radius: 20px;
+	width: 60px;
+	height: 60px;
 }
 
 img:hover {
 	background-color: #ab424a;
 }
+
+.background-text-image {
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.intro-text {
+	position: absolute;
+	top: 50px;
+}
+
+[alt="background image"] {
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+   }
 
 .page-heading {
 	// Sass lets you write your media queries inline if you want.
