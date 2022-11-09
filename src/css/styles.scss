@@ -54,6 +54,18 @@ img:hover {
 	border-radius: 0;
 }
 
+h3 {
+	text-align: center;
+}
+
+.food-icons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0;
+	grid-auto-rows: minmax(50px, 80px);
+	padding: 100px;
+}
+
 .page-heading {
 	// Sass lets you write your media queries inline if you want.
 	// This is why I'm always forgetting I have to put the class inside
