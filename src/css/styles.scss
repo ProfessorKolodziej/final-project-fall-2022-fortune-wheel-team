@@ -88,12 +88,14 @@ h3 {
 	width: 300;
 	height: 300;
 	transform: rotate(0.1);
+	background-color: transparent;
 }
 
 [alt="2"] {
 	position: absolute;
 	margin-top: 20px;
 	margin-left: -40px;
+	background-color: transparent;
 }
 
 p {
@@ -111,8 +113,8 @@ p {
 
 ul {
 	width: 650px;
-	height: 690px;
-	top: -200px;
+	height: 650px;
+	top: -50px;
 	background: #fdfdfd;
 	text-align: center;
 	position: relative;
@@ -132,7 +134,7 @@ li {
 	line-height: 10px;
 	width: 0;
 	height: 10px;
-	border-left: 340px solid red;
+	border-left: 340px solid transparent;
 	border-top: 140px solid transparent;
 	border-right: 402px solid transparent;
 	border-bottom: 147px solid transparent;
