@@ -84,75 +84,87 @@ h3 {
 	padding-top: 0.5em;
 }
 
+svg {
+	display: block;
+	max-width: 500px;
+	margin: 0 auto;
+	transform: rotate(90deg);
+}
+
+.wheel {
+	-webkit-animation-name: spin;
+	-webkit-animation-duration: 2000ms;
+	-webkit-animation-iteration-count: 5;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: spin;
+	-moz-animation-duration: 2000ms;
+	-moz-animation-iteration-count: 5;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name: spin;
+	-ms-animation-duration: 2000ms;
+	-ms-animation-iteration-count: 5;
+	-ms-animation-timing-function: linear;
+	animation-name: spin;
+	animation-duration: 2000ms;
+	animation-iteration-count: 5;
+	animation-timing-function: linear;
+}
+
+@-ms-keyframes spin {
+	from {
+		-ms-transform: rotate(0deg);
+	}
+
+	to {
+		-ms-transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes spin {
+	from {
+		-moz-transform: rotate(0deg);
+	}
+
+	to {
+		-moz-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes spin {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 [alt="1"] {
-	width: 300;
-	height: 300;
+	position: relative;
+	z-index: 10;
+	height: 200px;
+	width: 200px;
+	top: 100px;
+	margin: auto;
 	transform: rotate(0.1);
 	background-color: transparent;
 }
 
 [alt="2"] {
-	position: absolute;
-	margin-top: 20px;
-	margin-left: -40px;
-	background-color: transparent;
-}
-
-p {
-	width: 130px;
-	height: 130px;
-	background-color: #fff;
-	border-radius: 90px;
-	position: absolute;
-	margin-top: -200px;
-	margin-left: 82px;
-	text-align: center;
-	border: 5px solid #7e7e7e;
-	box-shadow: 0 0 10px #7e7e7e;
-}
-
-ul {
-	width: 650px;
-	height: 650px;
-	top: -50px;
-	background: #fdfdfd;
-	text-align: center;
 	position: relative;
-	border-radius: 50%;
-	overflow: hidden;
-	border: 10px solid #7e7e7e;
-	box-shadow: 0 0 10px #7e7e7e;
-}
-
-li {
-	display: inline-block;
-	position: absolute;
-	top: 192px;
-	left: -24.5px;
-	text-indent: -290px;
-	font-size: 22px;
-	line-height: 10px;
-	width: 0;
-	height: 10px;
-	border-left: 340px solid transparent;
-	border-top: 140px solid transparent;
-	border-right: 402px solid transparent;
-	border-bottom: 147px solid transparent;
-	color: #7e7e7e;
-}
-
-.img {
-	position: absolute;
-	z-index: 100;
-	top: 450px;
-	left: 200px;
-	cursor: pointer;
-}
-
-.tt {
-	display: inline-block;
-	color: black;
-	font-weight: bold;
+	margin: auto;
+	background-color: #fff;
 }
 
 h4 {
@@ -161,7 +173,7 @@ h4 {
 	border-radius: 20px;
 	width: 70px;
 	height: 30px;
-	margin: auto;
+	margin: 3em auto;
 	padding-top: 0.3em;
 }
 
