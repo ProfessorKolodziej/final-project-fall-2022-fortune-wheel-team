@@ -42,6 +42,38 @@ h2 {
 	line-height: 2em;
 }
 
+#mobile-pic {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+}
+
+#ipad-pic {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+}
+
+#web-pic {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+}
+
+.rotateimg180 {
+	-webkit-transform: rotate(120deg);
+	-moz-transform: rotate(120deg);
+	-ms-transform: rotate(120deg);
+	-o-transform: rotate(120deg);
+	transform: rotate(120deg);
+}
+
 img {
 	background-color: #dd7c00;
 	border-radius: 20px;
@@ -53,6 +85,7 @@ img {
 	text-align: center;
 	color: white;
 	top: 0;
+	width: 100%;
 }
 
 .intro-text {
@@ -65,11 +98,95 @@ h3 {
 	padding-top: 10em;
 }
 
-#background-image {
-	position: relative;
-	width: 100%;
-	height: 100%;
+[alt="2"] {
 	border-radius: 0;
+	background-color: transparent;
+}
+
+.main-wheel {
+	position: absolute;
+	top: 40em;
+	width: 100%;
+}
+
+.box {
+	width: 40%;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 35px;
+	border: 2px solid #fff;
+	border-radius: 20px/50px;
+	background-clip: padding-box;
+	text-align: center;
+}
+
+.button {
+	font-size: 1em;
+	padding: 10px;
+	color: #fff;
+	border: 2px solid #d88406;
+	border-radius: 20px/50px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+}
+
+.button:hover {
+	background: #d88406;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+.popup .close:hover {
+	color: #d87606;
+}
+
+.popup .content {
+	max-height: 30%;
+	overflow: auto;
+	color: #000;
 }
 
 .food-icons {
@@ -181,22 +298,75 @@ h4:hover {
 	background-color: #ab424a;
 }
 
-.page-heading {
-	// Sass lets you write your media queries inline if you want.
-	// This is why I'm always forgetting I have to put the class inside
-	// the media query in regular CSS. I never have to in Sass!
-	// I like combining these with variables to make it easier to read
-	// my media queries.
-
-	@media screen and (min-width: $large-phone) {
-		color: $orange;
+@media screen and (min-width: $tablet-vertical) {
+	#mobile-pic {
+		display: none;
 	}
 
-	@media screen and (min-width: $tablet-vertical) {
-		color: $green;
+	#ipad-pic {
+		display: block;
+		background-repeat: repeat-y;
 	}
 
-	@media screen and (min-width: $desktop) {
-		color: $blue;
+	#web-pic {
+		display: none;
+	}
+
+	.main-wheel {
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	#mobile-pic {
+		display: none;
+	}
+
+	#ipad-pic {
+		display: none;
+	}
+
+	#web-pic {
+		display: block;
+	}
+
+	.intro-text {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.title {
+		position: relative;
+		top: 60px;
+		font-size: 50px;
+		text-align: center;
+		width: 100%;
+		line-height: 50px;
+		font-weight: bold;
+	}
+
+	.paragraph {
+		top: -20px;
+		font-size: 24px;
+		text-align: center;
+		width: 100%;
+		line-height: 30px;
+		font-weight: bold;
+	}
+
+	.main-wheel {
+		top: 35em;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.list-para {
+		position: relative;
+		top: 5em;
+	}
+
+	.wheel-w {
+		position: relative;
+		top: 12em;
 	}
 }
