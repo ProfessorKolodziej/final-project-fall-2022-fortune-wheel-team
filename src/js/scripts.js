@@ -1,4 +1,5 @@
-document.querySelector('.title_btn').onclick = function () {
+const titleBtn = document.querySelector('.title_btn');
+function showInstructions() {
 	if (document.querySelector('#tooltip') !== null) {
 		document.querySelector('#tooltip').remove();
 		return;
@@ -15,16 +16,18 @@ document.querySelector('.title_btn').onclick = function () {
 
 	tooltip.innerHTML = `<div id="tooltip">${title}</div>`;
 	this.appendChild(tooltip);
-	// 鼠标移出元素，移除div
 	this.onmouseout = function () {
 		tooltip.remove();
 	};
-};
+}
+titleBtn.addEventListener('click', showInstructions);
 
 let items = 0;
 
 let arr = [];
-document.querySelector('.select_item').onclick = function (e) {
+
+const selectItem = document.querySelector('.select_item');
+function clickandShow(e) {
 	const { target } = e;
 	console.log('%c 开始测试 ', 'color:#fff; background:#00897b ');
 	console.log(target);
@@ -43,9 +46,10 @@ document.querySelector('.select_item').onclick = function (e) {
 		}
 		f();
 	}
-};
+}
+selectItem.addEventListener('click', clickandShow);
 
-function f() {
+function wheel() {
 	const main = document.querySelector('.shuju');
 	main.innerHTML = '';
 
@@ -61,13 +65,14 @@ function f() {
 	}
 	main.appendChild(lightFragment);
 }
-f();
+wheel();
 
 let timer = null;
 let rotate = 0;
 let ok = true;
 
-document.querySelector('.dianji').onclick = function () {
+const spinWheel = document.querySelector('.dianji');
+function spintheWheel() {
 	const shuju = document.querySelector('.shuju');
 
 	if (items === 8) {
@@ -87,9 +92,11 @@ document.querySelector('.dianji').onclick = function () {
 	} else {
 		alert('You have not selected 8 items');
 	}
-};
+}
+spinWheel.addEventListener('click', spintheWheel);
 
-document.querySelector('.CLEAR').onclick = function () {
+const clearWheel = document.querySelector('.CLEAR');
+function cleartheWheel() {
 	const shuju = document.querySelector('.shuju');
 	const bt = document.querySelectorAll('.bt');
 	for (let i = 0; i < bt.length; i++) {
@@ -98,5 +105,6 @@ document.querySelector('.CLEAR').onclick = function () {
 	items = 0;
 	arr = [];
 	shuju.style.transform = 'rotate(0deg)';
-	f();
-};
+	wheel();
+}
+clearWheel.addEventListener('click', cleartheWheel);
