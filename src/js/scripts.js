@@ -25,35 +25,12 @@ titleBtn.addEventListener('click', showInstructions);
 let items = 0;
 
 let arr = [];
-
-const selectItem = document.querySelector('.select_item');
-function clickandShow(e) {
-	const { target } = e;
-	console.log('%c 开始测试 ', 'color:#fff; background:#00897b ');
-	console.log(target);
-
-	if (target.tagName === 'DIV' && target.className !== 'select_item') {
-		if (target.className === 'bt') {
-			target.className = '';
-			items--;
-			arr.splice(arr.indexOf(target.children[0].src), 1);
-		} else if (items < 8) {
-			target.className = 'bt';
-			arr.push(target.children[0].src);
-			items++;
-		} else {
-			alert('You can only choose 8 items');
-		}
-		f();
-	}
-}
-selectItem.addEventListener('click', clickandShow);
-
 function wheel() {
 	const main = document.querySelector('.shuju');
 	main.innerHTML = '';
 
 	const lightFragment = document.createDocumentFragment();
+	// eslint-disable-next-line
 	for (let i = 0; i < 8; i++) {
 		const lightItem = document.createElement('div');
 		if (arr[i]) {
@@ -67,6 +44,32 @@ function wheel() {
 }
 wheel();
 
+const selectItem = document.querySelector('.select_item');
+function clickandShow(e) {
+	const { target } = e;
+	console.log('%c 开始测试 ', 'color:#fff; background:#00897b ');
+	console.log(target);
+
+	if (target.tagName === 'DIV' && target.className !== 'select_item') {
+		if (target.className === 'bt') {
+			target.className = '';
+			// eslint-disable-next-line
+			items--;
+			arr.splice(arr.indexOf(target.children[0].src), 1);
+		} else if (items < 8) {
+			target.className = 'bt';
+			arr.push(target.children[0].src);
+			// eslint-disable-next-line
+			items++;
+		} else {
+			alert('You can only choose 8 items');
+		}
+		wheel();
+	}
+}
+selectItem.addEventListener('click', clickandShow);
+
+// eslint-disable-next-line
 let timer = null;
 let rotate = 0;
 let ok = true;
@@ -99,6 +102,7 @@ const clearWheel = document.querySelector('.CLEAR');
 function cleartheWheel() {
 	const shuju = document.querySelector('.shuju');
 	const bt = document.querySelectorAll('.bt');
+	// eslint-disable-next-line
 	for (let i = 0; i < bt.length; i++) {
 		bt[i].className = '';
 	}
