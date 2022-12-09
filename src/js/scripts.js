@@ -1,3 +1,122 @@
+import finger from '../images/wheel/finger.png';
+import barbecue from '../images/barbecue.PNG';
+import bubbletea from '../images/bubbletea.PNG';
+import chicken from '../images/chicken.PNG';
+import dessert from '../images/dessert.PNG';
+import dumpling from '../images/dumpling.PNG';
+import hamburger from '../images/hamburger.png';
+import hotpot from '../images/hotpot.PNG';
+import noodles from '../images/noodles.PNG';
+import pizza from '../images/pizza.PNG';
+import rice from '../images/rice.PNG';
+import salmon from '../images/salmon.PNG';
+import seafood from '../images/seafood.PNG';
+import soup from '../images/soup.PNG';
+import steak from '../images/steak.PNG';
+import taco from '../images/taco.PNG';
+import vegan from '../images/vegan.PNG';
+
+// From the homepage
+let imgarr = [barbecue, bubbletea, chicken, dessert, dumpling, hamburger
+   , hotpot, noodles, pizza, rice, salmon, seafood, soup, steak, taco, vegan
+];
+
+window.onresize = function () {
+  resize()
+}
+
+function resize() {
+  let main = document.getElementsByClassName('main')[0];
+  let width = document.documentElement.clientWidth;
+
+  if (width < 480) {
+      main.innerHTML = `
+      <div id="iphone">
+      <div class="iphone_main">
+          <p class="iphone_main-p">let's select···</p>
+          <div class="select_item">
+
+          </div>
+      </div>
+      <div id="canvas">
+          <div class="zhizhen">
+              <div class="dianji">
+                  <img src="${finger}" alt="">
+              </div>
+          </div>
+
+          <div class="shuju">
+
+          </div>
+          <div class="CLEAR">
+              CLEAR
+          </div>
+      </div>
+      </div>
+      `
+
+  } else if (width < 1000) {
+      main.innerHTML = ` <div id="ipad">
+      <div class="ipad_main">
+          <p class="ipad_main-p">let's select···</p>
+      </div>
+      <div class="ipad_fiex">
+          <div>
+              <div class="select_item">
+
+              </div>
+              <div id="canvas">
+                  <div class="zhizhen">
+                      <div class="dianji">
+                          <img src="${finger}" alt="">
+                      </div>
+                  </div>
+
+                  <div class="shuju">
+
+                  </div>
+                  <div class="CLEAR">
+                      CLEAR
+                  </div>
+              </div>
+              </div>
+              </div>
+
+              </div>   `
+  }else if (width>1000){
+      main.innerHTML = ` <div id="web">
+          <div id="canvas">
+              <div class="zhizhen">
+                  <div class="dianji">
+                      <img src="${finger}" alt="">
+                  </div>
+              </div>
+
+              <div class="shuju">
+
+              </div>
+              <div class="CLEAR">
+                  CLEAR
+              </div>
+          </div>
+          <div class="web_main">
+              <p class="web_main-p">let's select···</p>
+              <div class="select_item">
+
+              </div>
+          </div>
+           </div>`
+
+  }
+
+  for (let i = 0; i < 16; i++) {
+      document.querySelector('.select_item').innerHTML += `<div class="select_item_box">  <img src = "${imgarr[i]}"> </div>`;
+  }
+}
+
+resize();
+
+// Previous code
 const titleBtn = document.querySelector('.title_btn');
 function showInstructions() {
 	if (document.querySelector('#tooltip') !== null) {

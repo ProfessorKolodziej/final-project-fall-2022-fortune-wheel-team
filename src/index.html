@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <title>yummy fortune wheel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <script>
-        let imgarr = ['barbecue.PNG', 'bubbletea.PNG', 'chicken.PNG', 'dessert.PNG', 'dumpling.PNG', 'hamburger.PNG'
-            , 'hotpot.PNG', 'noodles.PNG', 'pizza.png', 'rice.PNG', 'salmon.PNG', 'seafood.PNG', 'soup.PNG', 'steak.PNG', 'taco.PNG', 'vegan.PNG'
-        ];
-    </script>
 </head> 
 <body>
 <div id="app">
@@ -42,103 +37,4 @@
 
 
 </body>
-<script>
-    window.onresize = function () {
-
-        resize()
-    }
-
-    function resize() {
-        let main = document.getElementsByClassName('main')[0];
-        let width = document.documentElement.clientWidth;
-        if (width < 480) {
-            main.innerHTML = `
-            <div id="iphone">
-            <div class="iphone_main">
-                <p class="iphone_main-p">let's select···</p>
-                <div class="select_item">
-
-                </div>
-            </div>
-            <div id="canvas">
-                <div class="zhizhen">
-                    <div class="dianji">
-                        <img src="/images/wheel/finger.png" alt="">
-                    </div>
-                </div>
-
-                <div class="shuju">
-
-                </div>
-                <div class="CLEAR">
-                    CLEAR
-                </div>
-            </div>
-            </div>
-            `
-
-        } else if (width < 1000) {
-            main.innerHTML = ` <div id="ipad">
-            <div class="ipad_main">
-                <p class="ipad_main-p">let's select···</p>
-            </div>
-            <div class="ipad_fiex">
-                <div>
-                    <div class="select_item">
-
-                    </div>
-                    <div id="canvas">
-                        <div class="zhizhen">
-                            <div class="dianji">
-                                <img src="/images/wheel/finger.png" alt="">
-                            </div>
-                        </div>
-
-                        <div class="shuju">
-
-                        </div>
-                        <div class="CLEAR">
-                            CLEAR
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-
-                    </div>   `
-        }else if (width>1000){
-            main.innerHTML = ` <div id="web">
-                <div id="canvas">
-                    <div class="zhizhen">
-                        <div class="dianji">
-                            <img src="/images/wheel/finger.png" alt="">
-                        </div>
-                    </div>
-
-                    <div class="shuju">
-
-                    </div>
-                    <div class="CLEAR">
-                        CLEAR
-                    </div>
-                </div>
-                <div class="web_main">
-                    <p class="web_main-p">let's select···</p>
-                    <div class="select_item">
-
-                    </div>
-                </div>
-                 </div>`
-
-        }
-
-        for (let i = 0; i < 16; i++) {
-            document.querySelector('.select_item').innerHTML += `<div class="select_item_box">  <img src = "images/${imgarr[i]}"> </div>`;
-        }
-    }
-
-    resize();
-
-    
-
-</script>
 </html>
