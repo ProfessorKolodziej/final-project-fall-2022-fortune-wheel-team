@@ -17,20 +17,20 @@ import taco from '../images/taco.PNG';
 import vegan from '../images/vegan.PNG';
 
 // From the homepage
-let imgarr = [barbecue, bubbletea, chicken, dessert, dumpling, hamburger
-   , hotpot, noodles, pizza, rice, salmon, seafood, soup, steak, taco, vegan
+const imgarr = [barbecue, bubbletea, chicken, dessert, dumpling, hamburger,
+	hotpot, noodles, pizza, rice, salmon, seafood, soup, steak, taco, vegan,
 ];
 
 window.onresize = function () {
-  resize()
-}
+	resize();
+};
 
 function resize() {
-  let main = document.getElementsByClassName('main')[0];
-  let width = document.documentElement.clientWidth;
+	const main = document.getElementsByClassName('main')[0];
+	const width = document.documentElement.clientWidth;
 
-  if (width < 480) {
-      main.innerHTML = `
+	if (width < 480) {
+		main.innerHTML = `
       <div id="iphone">
       <div class="iphone_main">
           <p class="iphone_main-p">let's select···</p>
@@ -53,10 +53,9 @@ function resize() {
           </div>
       </div>
       </div>
-      `
-
-  } else if (width < 1000) {
-      main.innerHTML = ` <div id="ipad">
+      `;
+	} else if (width < 1000) {
+		main.innerHTML = ` <div id="ipad">
       <div class="ipad_main">
           <p class="ipad_main-p">let's select···</p>
       </div>
@@ -82,9 +81,9 @@ function resize() {
               </div>
               </div>
 
-              </div>   `
-  }else if (width>1000){
-      main.innerHTML = ` <div id="web">
+              </div>   `;
+	} else if (width > 1000) {
+		main.innerHTML = ` <div id="web">
           <div id="canvas">
               <div class="zhizhen">
                   <div class="dianji">
@@ -105,13 +104,13 @@ function resize() {
 
               </div>
           </div>
-           </div>`
+           </div>`;
+	}
 
-  }
-
+	// eslint-disable-next-line
   for (let i = 0; i < 16; i++) {
-      document.querySelector('.select_item').innerHTML += `<div class="select_item_box">  <img src = "${imgarr[i]}"> </div>`;
-  }
+		document.querySelector('.select_item').innerHTML += `<div class="select_item_box">  <img src = "${imgarr[i]}"> </div>`;
+	}
 }
 
 resize();
