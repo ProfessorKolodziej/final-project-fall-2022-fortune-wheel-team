@@ -21,10 +21,6 @@ const imgarr = [barbecue, bubbletea, chicken, dessert, dumpling, hamburger,
 	hotpot, noodles, pizza, rice, salmon, seafood, soup, steak, taco, vegan,
 ];
 
-window.onresize = function () {
-	resize();
-};
-
 function resize() {
 	const main = document.getElementsByClassName('main')[0];
 	const width = document.documentElement.clientWidth;
@@ -51,6 +47,9 @@ function resize() {
           <div class="CLEAR">
               CLEAR
           </div>
+		  <a href="https://www.yelp.com" target="_blank">
+                <button type="button" style="margin-left: 95px;">Visit Yelp!</button>
+			</a>
       </div>
       </div>
       `;
@@ -60,7 +59,7 @@ function resize() {
           <p class="ipad_main-p">let's select···</p>
       </div>
       <div class="ipad_fiex">
-          <div>
+          <div style="height: 800px;">
               <div class="select_item">
 
               </div>
@@ -77,6 +76,9 @@ function resize() {
                   <div class="CLEAR">
                       CLEAR
                   </div>
+				  <a href="https://www.yelp.com" target="_blank">
+                	<button type="button" style="margin-left: 150px;">Visit Yelp!</button>
+				</a>
               </div>
               </div>
               </div>
@@ -101,11 +103,18 @@ function resize() {
           <div class="web_main">
               <p class="web_main-p">let's select···</p>
               <div class="select_item">
-
+		
               </div>
+			  <a href="https://www.yelp.com" target="_blank">
+			  <button type="button" style="margin-left: 150px;">Visit Yelp!</button>
+		  </a>
           </div>
            </div>`;
 	}
+
+	window.onresize = () => {
+		resize();
+	};
 
 	// eslint-disable-next-line
   for (let i = 0; i < 16; i++) {
@@ -134,7 +143,7 @@ function showInstructions() {
 
 	tooltip.innerHTML = `<div id="tooltip">${title}</div>`;
 	this.appendChild(tooltip);
-	this.onmouseout = function () {
+	this.onmouseout = () => {
 		tooltip.remove();
 	};
 }
@@ -165,7 +174,9 @@ wheel();
 const selectItem = document.querySelector('.select_item');
 function clickandShow(e) {
 	const { target } = e;
+	// eslint-disable-next-line no-console
 	console.log('%c 开始测试 ', 'color:#fff; background:#00897b ');
+	// eslint-disable-next-line no-console
 	console.log(target);
 
 	if (target.tagName === 'DIV' && target.className !== 'select_item') {
@@ -180,7 +191,7 @@ function clickandShow(e) {
 			// eslint-disable-next-line
 			items++;
 		} else {
-			alert('You can only choose 8 items');
+			alert('You can only choose 8 items'); // eslint-disable-line no-alert
 		}
 		wheel();
 	}
@@ -208,10 +219,10 @@ function spintheWheel() {
 				rotate += deg;
 			}, 5000);
 		} else {
-			alert('You have already clicked the button');
+			alert('You have already clicked the button'); // eslint-disable-line no-alert
 		}
 	} else {
-		alert('You have not selected 8 items');
+		alert('You have not selected 8 items'); // eslint-disable-line no-alert
 	}
 }
 spinWheel.addEventListener('click', spintheWheel);

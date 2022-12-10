@@ -3,12 +3,12 @@
 	padding: 0;
 }
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 499px) {
 	#backg {
 		width: 100%;
 		background: url("../images/background.JPG") no-repeat;
 		background-size: 100% 100%;
-		height: 2000px;
+		height: 1500px;
 		display: flow-root;
 	}
 
@@ -208,12 +208,12 @@
 	}
 }
 
-@media screen and (min-width: 480px) and (max-width: 999px) {
+@media screen and (min-width: 500px) and (max-width: 768px) {
 	#backg {
 		width: 100%;
 		background: url("../images/IMG_0184.JPG");
 		background-size: 100%;
-		height: 2400px;
+		height: 1500px;
 		display: flow-root;
 	}
 
@@ -233,7 +233,7 @@
 	}
 
 	.header_title_box {
-		margin-top: 50px;
+		margin-top: 100px;
 		font-size: 24px;
 		color: white;
 		text-align: center;
@@ -246,6 +246,7 @@
 		width: 40px;
 		height: 30px;
 		border-radius: 10px;
+		box-shadow: 0 10px 10px 1px rgba(255, 255, 255, 0.42);
 		background: #f08d5c;
 		margin: 20px auto;
 		font-size: 16px;
@@ -275,7 +276,7 @@
 	}
 
 	.ipad_main-p {
-		color: white;
+		color: #fff;
 		font-size: 20px;
 		width: 100%;
 		text-align: center;
@@ -412,7 +413,7 @@
 	}
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 769px) {
 	#app {
 		margin: 0 auto;
 		max-width: 1200px;
@@ -420,10 +421,9 @@
 
 	#backg {
 		width: 100%;
-		max-width: 1200px;
 		background: url("../images/IMG_0183.JPG") no-repeat;
 		background-size: 100% 100%;
-		height: 1500px;
+		height: 1200px;
 		display: flow-root;
 	}
 
@@ -440,10 +440,11 @@
 		width: 100%;
 		line-height: 80px;
 		font-weight: bold;
+		margin-left: 60px;
 	}
 
 	.header_title_box {
-		margin-top: -30px;
+		margin-top: 30px;
 		font-size: 24px;
 		color: white;
 		text-align: center;
@@ -456,6 +457,7 @@
 		width: 40px;
 		height: 30px;
 		border-radius: 10px;
+		box-shadow: 0 10px 10px 1px rgba(255, 255, 255, 0.42);
 		background: #f08d5c;
 		margin: 100px auto;
 		font-size: 16px;
@@ -600,7 +602,7 @@
 
 	.web_main-p {
 		color: white;
-		font-size: 14px;
+		font-size: 20px;
 		width: 100%;
 		text-align: center;
 	}
