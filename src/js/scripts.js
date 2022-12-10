@@ -137,7 +137,7 @@ function showInstructions() {
         + '4. The “POP UP” area is your choice!<br>'
         + '5. If you are not satisfied with your current choice, click the “CLEAR” button to reselect and click them again.<br>'
         + '6. Repeat the above steps until the final choice is made.<br>'
-        + '7. Click your final choice, we will lead you to the related Yelp page!';
+        + '7. Click the Visit Yelp! button, we will lead you to the Yelp page!';
 
 	const tooltip = document.createElement('div');
 
