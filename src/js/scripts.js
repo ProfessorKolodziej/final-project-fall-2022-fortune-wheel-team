@@ -48,7 +48,7 @@ function resize() {
               CLEAR
           </div>
 		  <a href="https://www.yelp.com" target="_blank">
-                <button type="button" style="margin: 0 30%; background-color: rgb(243, 62, 62); color: #fff; padding: 20px; text-align: center; font-size: 16px; border-radius: 30px;">Visit Yelp!</button>
+                <button type="button" style="margin-left: 95px; background-color: rgb(243, 62, 62); color: #fff; padding: 20px; text-align: center; font-size: 15px; border-radius: 30px;">Visit Yelp!</button>
 			</a>
       </div>
       </div>
